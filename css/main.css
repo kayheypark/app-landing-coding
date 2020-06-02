@@ -19,17 +19,18 @@ a:hover {text-decoration: none; color: #000;}
 body {width: 100%; font-family: "SFUIText-Medium"; font-size: 16px; color: #000;
         box-sizing: border-box;}
 p.desc { font-size: 20px; font-family: "SFUIText-Light";}
+.line {height: 3px; width: 876px; background: #6E87C2;}
+.mainColor {color: #6E87C2;}
 
 
 
 /*레이아웃*/
 header {
-    border: 1px solid red;
     width: 1830px;
     height: 220px;
     margin: 0 auto;}
-#home {border: 1px solid black;width: 1830px; height: 1080px; margin: 0 auto;}
-#about {border: 1px solid black;width: 1830px;margin: 0 auto;}
+#home {width: 1830px; height: 1080px; margin: 0 auto;}
+#about {width: 1830px;margin: 0 auto;}
 #features {border: 1px solid black;width: 1830px;margin: 0 auto;}
 #details {border: 1px solid black;width: 1830px;margin: 0 auto;}
 #outro {border: 1px solid red;width: 1830px;margin: 0 auto;}
@@ -48,12 +49,43 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
 #home {background: url(../images/bg_header.png) no-repeat 0 -400px;}
 #home .mockup_splash {position: absolute; top: 240px; left: 390px;}
 #home .desc_area {position: absolute; top: 320px; right: 425px;}
-#home h3 {font-size: 65px; font-weight: bold;}
-#home .desc {margin: 10px 0;}
-.desc_area {color: #fff;}
-.desc .bold {font-family: "SFUIText-Bold";}
+    /* 설명 */
+    #home h3 {font-size: 65px; font-weight: bold;}
+    #home .desc {margin: 20px 0;}
+    .desc_area {color: #fff;}
+    .desc .bold {font-family: "SFUIText-Bold";}
+    /*다운로드 박스*/
+    .download_area {}
+      .download_ios, .download_android {display: inline-block; margin-right: 20px; cursor: pointer;}
+      .download_ios{background: url(../images/download_ios.png) no-repeat;
+                    width: 208px; height: 75px;}
+      .download_android{background: url(../images/download_android.png) no-repeat;
+                    width: 208px; height: 75px;}
+
 
 /*어바웃*/
+#about {}
+  .about_top {position: relative; height: 480px;}
+  .about_top .about_heading_area {position: absolute; left: 344px;}
+  .about_top .about_heading_area .logo_only {position: relative; width: 150px; height: 101px;
+                                            background: url(../images/logo_blue.png) no-repeat 0 0;}
+  .logo_only .txt {position: absolute; width: 100%; color: #6E87C2;font-weight: bold;}
+  .logo_only .txt:first-of-type {left: 176px; font-size: 18px; }
+  .logo_only .txt:last-of-type {top: 15px; left: 170px; font-size: 72px; }
+
+  .about_top .line {position: absolute; top: 120px;}
+  
+  .about_top .about_desc_area .desc { position: absolute; top: 170px; left: 344px;}
+  .about_top .mockup_splash {position: absolute; right: 580px; top: -150px;}
+  
+  .about_bottom {position: relative; height: 600px;}
+  .about_bottom .about_heading_area {position: absolute; right: 344px;}
+  .about_bottom .about_heading_area .heading {font-size: 51px; color: #6E87C2; font-weight: bold;}
+  .about_bottom .line {position: absolute; top: 70px; right: 0;}
+  .about_bottom .about_desc_area {position: absolute; right: 310px; top: 120px;}
+  .about_bottom .about_desc_area .desc {text-align: right; line-height: 1.6;}
+  .about_bottom .mockup_home {position: absolute; top: -150px; left: 550px;}
+  
 /*피쳐*/
 /*디테일*/
 /*아웃트로*/

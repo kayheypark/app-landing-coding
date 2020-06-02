@@ -1,4 +1,7 @@
 /* mockup.css */
 
-.mockup_splash{ border: 1px solid red; width: 281px; height: 564px;
+.mockup_splash{ width: 281px; height: 564px;
                 background: url(../images/mockup_splash.png) no-repeat 0 0;}
+
+.mockup_home{ width: 279px; height: 563px;
+    background: url(../images/mockup_home.png) no-repeat 0 0;}
