@@ -84,8 +84,43 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
   .about_bottom .line {position: absolute; top: 70px; right: 0;}
   .about_bottom .about_desc_area {position: absolute; right: 310px; top: 120px;}
   .about_bottom .about_desc_area .desc {text-align: right; line-height: 1.6;}
+  .about_bottom .about_desc_area .desc span {font-weight: bold;}
   .about_bottom .mockup_home {position: absolute; top: -150px; left: 550px;}
   
 /*피쳐*/
+#features {}
+.blueBox {width: 100%; height: 619px;
+  box-sizing: border-box; padding: 90px 0 0 0; 
+  background:url(../images/blueBox.png) no-repeat -173px -36px;}
+#features h2 {font-size: 50px; color: #fff; text-align: center; padding-bottom: 45px;}
+.feature_logos {width: 265px; height: 110px; background: url(../images/features_logos.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 20px;}
+.feature_howlogo {width: 219px; height: 67px; background: url(../images/features_plus.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 30px;}
+.feature_desc {color: #fff; font-size: 20px; text-align: center; line-height: 1.6;}
+
+  /* 폰트 */
+  .colors_wrap {width: 100%;}
+  .colors_wrap .items {display: block; text-align: center; margin: 159px 0 99px 0;}
+  .colors_wrap .item {
+    display: inline-block;
+    width: 94px;
+    height: 94px;
+    line-height: 94px;
+    margin-right: 50px;
+    border-radius: 50px;
+                    }
+  .colorName {color: #fff;}
+  .item:last-of-type .colorName {color: #111;}
+  .colors_wrap .item .meaning {}
+
+  .colors_wrap .item:first-of-type {background: #6E87C2;}
+  .colors_wrap .item:nth-of-type(2) {background: #717181;}
+  .colors_wrap .item:nth-of-type(3) {background: #333333;}
+  .colors_wrap .item:nth-of-type(4) {background: #FF9400;}
+  .colors_wrap .item:nth-of-type(5) {background: #FF4848;}
+  .colors_wrap .item:nth-of-type(6) {background: #41C753;}
+  .colors_wrap .item:last-of-type {background: #FFFFFF; border: 1px solid #555;}
+
+  .colors_wrap .desc {text-align: center;}
+  .colors_wrap .desc .mainColor {font-weight: bold; line-height: 1.1;}
 /*디테일*/
 /*아웃트로*/
