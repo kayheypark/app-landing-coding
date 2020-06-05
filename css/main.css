@@ -13,6 +13,7 @@
 @font-face { font-family: "SFUIText-Light"; src: url("../font/SFUIText-Light.ttf");} 
 @font-face { font-family: "SFUIText-Regular"; src: url("../font/SFUIText-Regular.ttf");} 
 @font-face { font-family: "SFUIText-Semibold"; src: url("../font/SFUIText-Semibold.ttf");} 
+@font-face { font-family: "SFUIText-SemiboldItalic"; src: url("../font/SFUIText-SemiboldItalic.ttf");} 
 
 a {text-decoration: none; color: #000;}
 a:hover {text-decoration: none; color: #000;}
@@ -21,6 +22,21 @@ body {width: 100%; font-family: "SFUIText-Medium"; font-size: 16px; color: #000;
 p.desc { font-size: 20px; font-family: "SFUIText-Light";}
 .line {height: 3px; width: 876px; background: #6E87C2;}
 .mainColor {color: #6E87C2;}
+div.heading { position: relative; width: 400px; height: 400px; font-size: 50px;}
+.bgNumber {position: absolute; font-family: "SFUIText-Semibold";
+          font-size: 328px; color: rgba(100, 135, 194, 0.2);
+          letter-spacing: -30px;}
+.sectionName {position: absolute; font-family: "SFUIText-Semibold"; top: 34%; left: 110px; color: #333; opacity: 0.9;}
+.nowPage {position: absolute; font-family: "SFUIText-Light"; bottom: 34%; left: 30px; color: #333; opacity: 0.9;}
+.nowPage:After {content: ''; position: absolute; display: block; width: 100%; height: 3px; background: #333; top: 0px;}
+.summary {position: relative;}
+.summary .eng {position: absolute;
+  top: 0;
+  font-family: "SFUIText-SemiboldItalic"; color: #717181; font-size: 60px; opacity: 0.3;}
+.summary .kor {position: absolute;
+  top: 65px;
+  left: 50px;
+  color: #6E87C2; font-size: 60px; font-family: "SFUIText-Semibold"; font-weight: bold;}
 
 
 
@@ -31,8 +47,8 @@ header {
     margin: 0 auto;}
 #home {width: 1830px; height: 1080px; margin: 0 auto;}
 #about {width: 1830px;margin: 0 auto;}
-#features {border: 1px solid black;width: 1830px;margin: 0 auto;}
-#details {border: 1px solid black;width: 1830px;margin: 0 auto;}
+#features {width: 1830px;margin: 0 auto;}
+#details {width: 1830px;margin: 0 auto;}
 #outro {border: 1px solid red;width: 1830px;margin: 0 auto;}
 
 /*헤더*/
@@ -97,7 +113,7 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
 .feature_howlogo {width: 219px; height: 67px; background: url(../images/features_plus.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 30px;}
 .feature_desc {color: #fff; font-size: 20px; text-align: center; line-height: 1.6;}
 
-  /* 폰트 */
+  /* 색상 */
   .colors_wrap {width: 100%;}
   .colors_wrap .items {display: block; text-align: center; margin: 159px 0 99px 0;}
   .colors_wrap .item {
@@ -122,5 +138,79 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
 
   .colors_wrap .desc {text-align: center;}
   .colors_wrap .desc .mainColor {font-weight: bold; line-height: 1.1;}
+
+  /* 폰트 */
+  .font_wrap {padding-top: 172px; color: #333;}
+  .cols_wrap {width: 1100px; margin: 0 auto; display: flex;}
+  .cols_wrap .font_ex {font-size: 112px; font-weight: bold;} 
+  .cols_wrap .fontName {font-size: 50px;  font-family: "SFUIText-Light";}
+  .cols_wrap .cols {flex:1;} 
+  .cols_wrap .lang {}
+
+  .font_wrap .col1 {}
+  .font_wrap .col2 {font-size: 36px; font-family: "SFUIText-Light"; margin-top: 21px;}
+  .font_wrap .col3 {font-size: 36px; font-family: "SFUIText-Light";  margin-top: 21px;}
+  .font_wrap .desc {padding-top: 150px; text-align: center;}
+  .font_wrap .desc .mainColor {font-weight: bold;}
+
+  /* 아이콘 */
+  .icons_wrap {position: relative; height: 1080px;margin-top: 100px;
+               background: url(../images/buildings.png) no-repeat 0 0;}
+  .icons_wrap h3 {font-size: 32px;}
+
+  .icons_wrap > div {position: absolute;}
+  .icons_wrap .category {top: 85px; left: 455px;}
+  .icons_wrap .category:after {
+    content: '';
+    width: 382px; height: 56px;
+    position: absolute; top: 60px; left: -110px;
+    background: url(../images/icons_category.png) no-repeat 0 0;}
+  .icons_wrap .drawer {top: 365px; left: 800px;}
+  .icons_wrap .drawer:after {
+    content: '';
+    width: 285px; height: 53px;
+    position: absolute; top: 60px; left: -60px;
+    background: url(../images/icons_drawer.png) no-repeat 0 0;}
+  .icons_wrap .etc {top: 675px; left: 1200px;}
+  .icons_wrap .etc:after {
+    content: '';
+    width: 321px; height: 46px;
+    position: absolute; top: 60px; left: -110px;
+    background: url(../images/icons_etc.png) no-repeat 0 0;}
+
+    /* --------O--------- 포인터 */
+    .icons_wrap .pointer {position: absolute; 
+      background: url(../images/pointer_small.png) no-repeat 0 0;
+      width: 62px; height: 59px;
+    }
+    .icons_wrap .pointer_small_1 {top: 212px; left: 730px;}
+    .icons_wrap .pointer_small_2 {top: 500px; left: 1030px; transform: rotateZ(45deg);}
+    .icons_wrap .pointer_small_3 {top: 875px; left: 1450px; transform: rotateZ(-95deg);}
+    
+    .pointer_big {position: absolute;
+                  top: 445px; left: 85px;
+                  background: url(../images/pointer_big.png) no-repeat 0 0;
+                  width: 169px; height: 169px;}
+    .pointer_middle {position: absolute;
+                  top: 845px; left: 785px;
+                  background: url(../images/pointer_middle.png) no-repeat 0 0;
+                  width: 113px; height: 113px;}
+    
+    /*---------라인*/
+    .icons_wrap .line {position: absolute; width: 100%;}
+    .line_1 {background: url(../images/line_blue.png) no-repeat 0 0; top: 240px; left: 0px;}
+    .line_2 {background: url(../images/line_blue_2.png)no-repeat 0 0; top: 525px; left: 0px;}
+    .line_3 {background: url(../images/line_blue_3.png)no-repeat 0 0; top: 900px; left: 0px;}
 /*디테일*/
+#details {margin-top: 210px;}
+.splash-and-main_wrap {position: relative;}
+.splash-and-main_wrap .summary {margin-top: -150px;  margin-left: 950px;}
+.splash-and-main_wrap .mockup_splash {margin-left: 500px; margin-top: -20px;}
+.splash-and-main_wrap p.desc { position: absolute; right: 400px; top: 432px;
+   text-align: left; font-size: 20px; color: #717181; font-family: "SFUIText-Light";
+  line-height: 3.6;}
+
+
+.splash-and-main_wrap .desc span {font-weight: bold;}
+
 /*아웃트로*/
