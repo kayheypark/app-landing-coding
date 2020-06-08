@@ -49,10 +49,15 @@ header {
 #about {width: 1830px;margin: 0 auto;}
 #features {width: 1830px;margin: 0 auto;}
 #details {width: 1830px;margin: 0 auto;}
-#outro {border: 1px solid red;width: 1830px;margin: 0 auto;}
+#outro {width: 1830px;margin: 0 auto;
+  margin: 0 auto;
+  padding-top: 195px;
+  height: 2340px;
+  background: url("../images/bg_outro.png") no-repeat 0 100%;
+}
 
 /*헤더*/
-header {position: fixed; top: 0; left: 50%; transform: translateX(-50%);}
+header {position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
 header a {font-family: "SFUIText-Light"; font-size: 32px; color: #fff;}
 header a:hover {color: #fff;}
 header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px; color: #fff; font-weight: bold;}
@@ -255,12 +260,130 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
             right: -210px;}
 
     /* 2. 알람, 캘린더 */
-    .alarm-and-calender_wrap {position: relative; margin-top: 200px;}
-    .alarm-and-calender_wrap .heading {position: absolute; right: 0; top: 00px;}
+    .alarm-and-calender_wrap {position: relative; margin-top: 200px; height: 567px;
+    }
+    .alarm-and-calender_wrap .heading {position: absolute; right: 160px; top: 62px;}
     .alarm-and-calender_wrap .nowPage{ width: 409px; left: -9px;}
 
-    .alarm-and-calender_wrap .summary {top: 0; left: 0px;}
-    .alarm-and-calender_wrap .desc {font-size: 20px; color: #717181; line-height: 3.6; padding-top: 270px;}
+    .alarm-and-calender_wrap .summary {position: absolute; width: 600px; top: 0; left: 126px;}
+    .alarm-and-calender_wrap .desc {font-size: 20px; color: #717181; line-height: 3.6; padding-top: 270px; padding-left: 231px;}
     .alarm-and-calender_wrap .mainColor {font-family: "SFUIText-Semibold"; font-weight: bold;}
 
-/*아웃트로*/
+    .alarm-and-calender_wrap .mockup_alarm,
+    .alarm-and-calender_wrap .mockup_home, 
+    .alarm-and-calender_wrap .mockup_home2 {position: absolute; top: 0; text-align: center; padding-top: 620px; font-size: 25px; font-family: "SFUIText-Light"; color: #fff;
+            transform: translateX(-50%);}
+
+    .alarm-and-calender_wrap .mockup_home {background-position-y: 20px;}
+
+
+    .alarm-and-calender_wrap .mockup_alarm {top: 800px; left: 20%; z-index: 5;}
+    .alarm-and-calender_wrap .mockup_home  {top: 650px; left: 50%; z-index: 5;}
+    .alarm-and-calender_wrap .mockup_home2 {top: 500px; left: 80%; z-index: 5;}
+
+    /* 3.마이페이지, 채팅 */
+     /*블루 배경*/
+    .mypage-and-chatting_wrap {
+      position: relative;
+      background: url("../images/bg_slide.png") no-repeat -137px 0; width: 1830px; height: 1848px;}
+    .mypage-and-chatting_wrap .heading {position: absolute; bottom: 500px; left: calc(50% - 190px);}
+    .mypage-and-chatting_wrap .heading span {color: #fff;}
+    .mypage-and-chatting_wrap .nowPage {width: 449px; margin: 0px 0 0 -65px; text-indent: 0px;} 
+    .mypage-and-chatting_wrap .nowPage:After {background: #fff;}
+    .mypage-and-chatting_wrap .bgNumber {color: #fff; opacity: 0.2;}
+
+    .mypage-and-chatting_wrap .mockup_mypage,
+    .mypage-and-chatting_wrap .mockup_drawer,
+    .mypage-and-chatting_wrap .mockup_chatting {position: absolute; top: calc(75% + -55px);
+      color: #333; font-size: 25px; font-family: "SFUIText-Light";
+    }
+
+    .mypage-and-chatting_wrap .mockup_mypage {left: calc(50% - 435px); text-indent: 65px; padding-top: 825px;}
+    .mypage-and-chatting_wrap .mockup_drawer {top: calc(75% + 5px); left: calc(50% - 169.5px);}
+    .mypage-and-chatting_wrap .mockup_chatting {left: calc(50% + 125px); text-indent: 218px; padding-top: 825px;}
+
+    /* 4. 지도 */
+    .maps_wrap {
+      margin: 550px 0;
+    }
+
+    .maps_wrap .heading {position: absolute; right: 230px; top: 85px;}
+    .maps_wrap .nowPage {margin-left: 106px;}
+    
+      /* 회갈색배경 */
+      .maps_wrap .row:first-of-type {
+        position: relative;
+        height: 1650px;
+        background: rgba(112, 112, 112, 0.08);
+        
+
+      }
+
+      .maps_wrap .row:first-of-type .summary {position: absolute; top: 249px; left: 162px; width: 730px;}
+
+      .maps_wrap .row:first-of-type .desc {font-size: 20px; font-family: "SFUIText-Light"; color: #717181; line-height: 3.2;
+        position: absolute; top: 417px; left: 223px;} 
+
+      .line_mapDesc {
+        position: absolute;
+        top: 511px;
+        left: 659px;
+        z-index: 5;
+        background: url("../images/line_mapDesc.png") no-repeat 0 0; width: 127px; height: 171px;}
+
+
+      .maps_wrap .row:first-of-type .mockup_filter,
+      .maps_wrap .row:first-of-type .mockup_map,
+      .maps_wrap .row:first-of-type .mockup_info {position: absolute; top: 605px; padding-top: 790px; text-align: center;}
+
+      .maps_wrap .row:first-of-type .mockup_map {text-align: left; text-indent: 215px; padding-top: 837px;}
+
+      .maps_wrap .row:first-of-type .mockup_filter {left: calc(23% - 186.5px);}
+      .maps_wrap .row:first-of-type .mockup_map {top: 565px; left: calc(50% - 233px);}
+      .maps_wrap .row:first-of-type .mockup_info {left: calc(77% - 186.5px);}
+
+      .maps_wrap .row:first-of-type .mockupTitle {font-size: 25px; color: #717181; font-family: "SFUIText-Light";}
+      /* 흰배경 */
+      .maps_wrap .row:last-of-type {
+        position: relative;
+        height: 917px;
+        background: #fff;
+      }
+
+      .maps_wrap .row:last-of-type .summary {
+        position: absolute;
+        right: 249px; top: 265px;
+        width: 742px;}
+
+      .maps_wrap .row:last-of-type .desc {font-size: 20px;  font-family: "SFUIText-Light"; color: #717181; line-height: 3.2;
+        position: absolute; right: 337px; top: 425px;}
+
+      .maps_wrap .row:last-of-type .mockup_findPath {position: absolute; top: 348px; left: 234px; text-align: center; padding-top: 800px;}
+      .maps_wrap .row:last-of-type .mockup_transfer {position: absolute; top: 626px; left: 715px; text-align: center; padding-top: 800px;}
+
+      .maps_wrap .row:last-of-type .mockupTitle {font-size: 25px; color: #717181; font-family: "SFUIText-Light";}
+      .maps_wrap .row:last-of-type .mockupDesc {font-size: 24px; color: #717181; font-family: "SFUIText-Light";
+        position: absolute;
+        background: url("../images/line_last.png") no-repeat 0 50%;
+        text-indent: 130px;
+      top: 1243px;
+    left: 1087px;}
+
+      .mockup_findPath .mockupTitle {}
+      .mockup_transfer .mockupTitle {}
+    /*아웃트로*/
+    #outro {
+      position: relative;
+      overflow: hidden;
+
+    
+    }
+    #outro .row{
+      position: relative;
+      width: 100%;
+      height: 1016px;
+      background: url("../images/logo_outro.png") no-repeat 50% 20%;}
+
+      .byebye {position: absolute; top: 50%; left: calc(50% - 466.795px); font-size: 87px; opacity: 0.3; color: #717181;}
+      .mockup_outro {position: absolute; bottom: 0; left: calc(50% - 1065px);}
+      

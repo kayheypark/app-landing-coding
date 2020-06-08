@@ -5,3 +5,38 @@
 
 .mockup_home{ width: 279px; height: 563px;
     background: url(../images/mockup_home.png) no-repeat 0 0;}
+
+.mockup_home2{ width: 295px; height: 597px;
+    background: url(../images/mockup_home2.png) no-repeat 0 0;}
+
+.mockup_alarm{ width: 295px; height: 597px;
+    background: url(../images/mockup_alarm.png) no-repeat 0 0;}
+
+.mockup_mypage{ width: 275px; height: 792px;
+    background: url(../images/mockup_mypage.png) no-repeat 0 0;}
+
+.mockup_drawer{ width: 319px; height: 643px;
+    background: url(../images/mockup_drawer.png) no-repeat 0 0;}
+
+.mockup_chatting{ width: 441px; height: 789px;
+    background: url(../images/mockup_chatting.png) no-repeat 0 0;}
+
+.mockup_filter{ width: 373px; height: 753px;
+    background: url(../images/mockup_filter.png) no-repeat 0 0;}
+    
+.mockup_map{ width: 536px; height: 845px;
+    background: url(../images/mockup_map.png) no-repeat 0 0;}
+    
+.mockup_info{width: 373px; height: 753px;
+    background: url(../images/mockup_info.png) no-repeat 0 0;}
+    
+.mockup_findPath{width: 373px; height: 753px;
+    background: url(../images/mockup_findPath.png) no-repeat 0 0;}
+    
+.mockup_transfer{width: 373px; height: 753px;
+    background: url(../images/mockup_transfer.png) no-repeat 0 0;}
+
+.mockup_outro{width: 2130px; height: 1598px;
+    background: url(../images/mockup_outro.png) no-repeat 0 0;}
+    
+
