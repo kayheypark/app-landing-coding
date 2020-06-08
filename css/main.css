@@ -17,7 +17,7 @@
 
 a {text-decoration: none; color: #000;}
 a:hover {text-decoration: none; color: #000;}
-body {width: 100%; font-family: "SFUIText-Medium"; font-size: 16px; color: #000;
+body {z-index: 0; width: 100%; font-family: "SFUIText-Medium"; font-size: 16px; color: #000;
         box-sizing: border-box;}
 p.desc { font-size: 20px; font-family: "SFUIText-Light";}
 .line {height: 3px; width: 876px; background: #6E87C2;}
@@ -42,14 +42,16 @@ div.heading { position: relative; width: 400px; height: 400px; font-size: 50px;}
 
 /*레이아웃*/
 header {
-    width: 1830px;
-    height: 220px;
-    margin: 0 auto;}
-#home {width: 1830px; height: 1080px; margin: 0 auto;}
-#about {width: 1830px;margin: 0 auto;}
-#features {width: 1830px;margin: 0 auto;}
-#details {width: 1830px;margin: 0 auto;}
-#outro {width: 1830px;margin: 0 auto;
+    width: 1647px;
+    height: 709px;
+    margin: 0 auto;
+  background: url("../images/bg_gradient.png") no-repeat 0 -160px;
+  }
+#home {width: 1647px; height: 1080px; margin: 0 auto;}
+#about {width: 1647px;margin: 0 auto;}
+#features {width: 1647px;margin: 0 auto;}
+#details {width: 1647px;margin: 0 auto;}
+#outro {width: 1647px;margin: 0 auto;
   margin: 0 auto;
   padding-top: 195px;
   height: 2340px;
@@ -57,7 +59,9 @@ header {
 }
 
 /*헤더*/
-header {position: absolute; top: 0; left: 50%; transform: translateX(-50%);}
+header.upper {position: fixed; z-index: 10; top: 0; left: 50%; transform: translateX(-50%); opacity: 1;
+  transition: opacity 0.2s linear 0s;}
+header {position: fixed; left: 50%; transform: translateX(-50%); opacity: 0; z-index: -10; transition: opacity 0.15s linear 0s;}
 header a {font-family: "SFUIText-Light"; font-size: 32px; color: #fff;}
 header a:hover {color: #fff;}
 header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px; color: #fff; font-weight: bold;}
@@ -67,9 +71,11 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
 .gnb li {float: left; margin-left: 107px;}
 
 /*홈*/
-#home {background: url(../images/bg_header.png) no-repeat 0 -400px;}
-#home .mockup_splash {position: absolute; top: 240px; left: 390px;}
-#home .desc_area {position: absolute; top: 320px; right: 425px;}
+#home {position: relative; background: url(../images/bg_header.png) no-repeat 0px -298px; background-size: 111%;}
+#home .mockup_splash {position: absolute; top: 300px; left: 266px; transition: all 0.4s ease-in-out 0s; opacity: 0;}
+#home.on .mockup_splash {top: calc(300px - 60px); opacity: 1;}
+#home .desc_area {position: absolute; top: 320px; left: 732px;  transition: all 0.4s ease-in-out 0.4s; opacity: 0;}
+#home.on .desc_area {top: calc(320px - 60px); opacity: 1;}
     /* 설명 */
     #home h3 {font-size: 65px; font-weight: bold;}
     #home .desc {margin: 20px 0;}
@@ -87,7 +93,9 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
 /*어바웃*/
 #about {}
   .about_top {position: relative; height: 480px;}
-  .about_top .about_heading_area {position: absolute; left: 344px;}
+  #about .about_top .about_heading_area {position: absolute; left: 344px; top: 30px;
+    transition: all 0.4s ease-in-out 0s; opacity: 0;}
+  #about.on .about_top .about_heading_area {position: absolute; left: 344px; top: 0; opacity: 1;}
   .about_top .about_heading_area .logo_only {position: relative; width: 150px; height: 101px;
                                             background: url(../images/logo_blue.png) no-repeat 0 0;}
   .logo_only .txt {position: absolute; width: 100%; color: #6E87C2;font-weight: bold;}
@@ -96,31 +104,121 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
 
   .about_top .line {position: absolute; top: 120px;}
   
-  .about_top .about_desc_area .desc { position: absolute; top: 170px; left: 344px;}
-  .about_top .mockup_splash {position: absolute; right: 580px; top: -150px;}
+  #about .about_top .about_desc_area .desc { position: absolute; top: 200px; left: 344px;
+    transition: all 0.4s ease-in-out 0.4s; opacity: 0;}
+  #about.on .about_top .about_desc_area .desc { position: absolute; top: 170px; left: 344px;
+  opacity: 1;}
+  #about .about_top .mockup_splash {position: absolute; right: 400px; top: -120px;
+    transition: all 0.4s ease-in-out 0.8s; opacity: 0;
+    opacity: 0;
+  }
+  #about.on .about_top .mockup_splash {position: absolute; right: 400px; top: -150px;
+  opacity: 1;}
   
   .about_bottom {position: relative; height: 600px;}
   .about_bottom .about_heading_area {position: absolute; right: 344px;}
-  .about_bottom .about_heading_area .heading {font-size: 51px; color: #6E87C2; font-weight: bold;}
+  #about .about_bottom .about_heading_area .heading {
+    position: absolute;
+    font-size: 51px; color: #6E87C2; font-weight: bold;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  top: 30px;
+  left: -238px;
+  }
+  #about .about_bottom.on .about_heading_area .heading {
+    font-size: 51px; color: #6E87C2; font-weight: bold;
+    opacity: 1;
+    top: 0;}
   .about_bottom .line {position: absolute; top: 70px; right: 0;}
   .about_bottom .about_desc_area {position: absolute; right: 310px; top: 120px;}
-  .about_bottom .about_desc_area .desc {text-align: right; line-height: 1.6;}
+  #about .about_bottom .about_desc_area .desc {text-align: right; line-height: 1.6;
+    width: 571px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0.4s;}
+  #about .about_bottom.on .about_desc_area .desc {text-align: right; line-height: 1.6;
+    top: 0;
+  opacity: 1;}
   .about_bottom .about_desc_area .desc span {font-weight: bold;}
-  .about_bottom .mockup_home {position: absolute; top: -150px; left: 550px;}
+  .about_bottom .mockup_home {position: absolute; top: -120px; left: 410px;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0.8s;
+}
+  .about_bottom.on .mockup_home {position: absolute; top: -150px; left: 410px;
+  opacity: 1;}
   
 /*피쳐*/
 #features {}
-.blueBox {width: 100%; height: 619px;
+ .blueBox {width: 100%; height: 619px;
   box-sizing: border-box; padding: 90px 0 0 0; 
-  background:url(../images/blueBox.png) no-repeat -173px -36px;}
-#features h2 {font-size: 50px; color: #fff; text-align: center; padding-bottom: 45px;}
-.feature_logos {width: 265px; height: 110px; background: url(../images/features_logos.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 20px;}
-.feature_howlogo {width: 219px; height: 67px; background: url(../images/features_plus.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 30px;}
-.feature_desc {color: #fff; font-size: 20px; text-align: center; line-height: 1.6;}
+  background:url(../images/blueBox.png) no-repeat -173px -36px;
+  transform: translateY(60px);
+  transition: all 0.8s ease-in-out 0s;
+  opacity: 0;
+
+}
+
+ .blueBox.on {width: 100%; height: 619px;
+  box-sizing: border-box; padding: 90px 0 0 0; 
+  background:url(../images/blueBox.png) no-repeat -173px -36px;
+
+  transform: translateY(0);
+  opacity: 1;
+}
+#features .blueBox h2 {font-size: 50px; color: #fff; text-align: center; padding-bottom: 45px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-in-out 0.8s;}
+#features .blueBox.on h2 {font-size: 50px; color: #fff; text-align: center; padding-bottom: 45px;
+  transition: all 0.4s ease-in-out 0.8s;
+  opacity: 1;
+  transform: translateY(0);
+}
+ .blueBox .feature_logos {width: 265px; height: 110px; background: url(../images/features_logos.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 20px;
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.4s ease-in-out 1.2s;}
+ .blueBox.on .feature_logos {width: 265px; height: 110px; background: url(../images/features_logos.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 20px;
+opacity: 1;
+transform: translateY(0);
+
+}
+
+.blueBox .feature_howlogo { width: 219px; height: 67px; background: url(../images/features_plus.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 30px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-in-out 1.6s;
+
+}
+.blueBox.on .feature_howlogo { width: 219px; height: 67px; background: url(../images/features_plus.png) no-repeat 0 0; margin: 0 auto; padding-bottom: 30px;
+opacity: 1;
+transform: translateY(0);
+
+}
+.blueBox .feature_desc {color: #fff; font-size: 20px; text-align: center; line-height: 1.6;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-in-out 2.0s;}
+.blueBox.on .feature_desc {color: #fff; font-size: 20px; text-align: center; line-height: 1.6;
+  opacity: 1;
+  transform: translateY(0);
+  
+  }
 
   /* 색상 */
   .colors_wrap {width: 100%;}
-  .colors_wrap .items {display: block; text-align: center; margin: 159px 0 99px 0;}
+  .colors_wrap .items {display: block; text-align: center; margin: 159px 0 99px 0;
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.4s ease-in-out 0s;
+}
+  .colors_wrap.on .items {display: block; text-align: center; margin: 159px 0 99px 0;
+opacity: 1;
+transform: translateY(0);
+  }
   .colors_wrap .item {
     display: inline-block;
     width: 94px;
@@ -133,6 +231,7 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
   .item:last-of-type .colorName {color: #111;}
   .colors_wrap .item .meaning {}
 
+
   .colors_wrap .item:first-of-type {background: #6E87C2;}
   .colors_wrap .item:nth-of-type(2) {background: #717181;}
   .colors_wrap .item:nth-of-type(3) {background: #333333;}
@@ -141,12 +240,28 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
   .colors_wrap .item:nth-of-type(6) {background: #41C753;}
   .colors_wrap .item:last-of-type {background: #FFFFFF; border: 1px solid #555;}
 
-  .colors_wrap .desc {text-align: center;}
+  .colors_wrap .desc {text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-in-out 0.4s;
+  }
+  .colors_wrap.on .desc {text-align: center;
+  opacity: 1;
+  transform:translateY(0);
+  }
   .colors_wrap .desc .mainColor {font-weight: bold; line-height: 1.1;}
 
   /* 폰트 */
   .font_wrap {padding-top: 172px; color: #333;}
-  .cols_wrap {width: 1100px; margin: 0 auto; display: flex;}
+  .font_wrap .cols_wrap {width: 1100px; margin: 0 auto; display: flex;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-in-out 0s;
+  }
+  .font_wrap.on .cols_wrap {width: 1100px; margin: 0 auto; display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  }
   .cols_wrap .font_ex {font-size: 112px; font-weight: bold;} 
   .cols_wrap .fontName {font-size: 50px;  font-family: "SFUIText-Light";}
   .cols_wrap .cols {flex:1;} 
@@ -155,7 +270,15 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
   .font_wrap .col1 {}
   .font_wrap .col2 {font-size: 36px; font-family: "SFUIText-Light"; margin-top: 21px;}
   .font_wrap .col3 {font-size: 36px; font-family: "SFUIText-Light";  margin-top: 21px;}
-  .font_wrap .desc {padding-top: 150px; text-align: center;}
+  .font_wrap .desc {padding-top: 150px; text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease-in-out 0.4s;
+  }
+  .font_wrap.on .desc {padding-top: 150px; text-align: center;
+    opacity: 1;
+  transform: translateY(0);
+  }
   .font_wrap .desc .mainColor {font-weight: bold;}
 
   /* 아이콘 */
@@ -207,39 +330,40 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
     .line_2 {background: url(../images/line_blue_2.png)no-repeat 0 0; top: 525px; left: 0px;}
     .line_3 {background: url(../images/line_blue_3.png)no-repeat 0 0; top: 900px; left: 0px;}
 /*디테일*/
+/*1. 스플래시 , 메인*/
 #details {margin-top: 210px;}
 .splash-and-main_wrap {position: relative;}
-.splash-and-main_wrap .summary {margin-top: -150px;  margin-left: 950px;}
+.splash-and-main_wrap .heading {left: 60px;}
+.splash-and-main_wrap .summary {margin-top: -150px;  margin-left: 850px;}
 .splash-and-main_wrap .mockup_splash {margin-left: 500px; margin-top: -20px;}
-.splash-and-main_wrap p.desc { position: absolute; right: 400px; top: 432px;
+.splash-and-main_wrap p.desc { position: absolute; right: 300px; top: 432px;
    text-align: left; font-size: 20px; color: #717181; font-family: "SFUIText-Light";
   line-height: 3.6;}
 
-/*1. 스플래시 , 메인*/
 .splash-and-main_wrap .desc span {font-weight: bold;}
 
 .mockup_laydownPhone {
   position: relative;
   margin-top: 200px;
-    background: url("../images/mockup_laydownPhone.png") no-repeat 210px 0 ; width: 1529px; height: 929px;}
+    background: url("../images/mockup_laydownPhone.png") no-repeat 50px 0 ; width: 1529px; height: 929px;}
 
   .mockup_laydownPhone .desc {position: absolute; font-family: "SFUIText-Light"; font-size: 20px;}
   .mockup_laydownPhone .desc:nth-of-type(1) {
-              top: -10px; right: 620px;
+              top: -10px; right: 720px;
               text-indent: 50px;
               background: url("../images/path_1.png") no-repeat 100% 40px;
               width: 179px; height: 231px;}
   .mockup_laydownPhone .desc:nth-of-type(2) {
     padding-top: 170px;
     text-indent: 101px;
-              top: 285px; right: -165px;
+              top: 285px; right: -81px;
               background: url("../images/path_2.png") no-repeat 0 0;
               width: 300px;
             }
   .mockup_laydownPhone .desc:nth-of-type(3) {
     padding-top: 170px;
     text-indent: 80px;
-    top: 405px; right: 25px;
+    top: 405px; right: 125px;
               background: url("../images/path_2.png") no-repeat 0 0;
               width: 300px;
   
@@ -247,7 +371,7 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
   .mockup_laydownPhone .desc:nth-of-type(4) {
     padding-top: 170px;
     text-indent: 80px;
-    top: 625px; right: 410px;
+    top: 625px; right: 498px;
               background: url("../images/path_2.png") no-repeat 0 0;
               width: 300px;
   
@@ -257,7 +381,7 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
             background: url("../images/mockup_home_laydown.png") no-repeat 0 0;
             width: 1643px; height: 1040px;
             top: -100px;
-            right: -210px;}
+            right: -120px;}
 
     /* 2. 알람, 캘린더 */
     .alarm-and-calender_wrap {position: relative; margin-top: 200px; height: 567px;
@@ -285,7 +409,7 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
      /*블루 배경*/
     .mypage-and-chatting_wrap {
       position: relative;
-      background: url("../images/bg_slide.png") no-repeat -137px 0; width: 1830px; height: 1848px;}
+      background: url("../images/bg_slide.png") no-repeat -137px 0; width: 1647px; height: 1848px;}
     .mypage-and-chatting_wrap .heading {position: absolute; bottom: 500px; left: calc(50% - 190px);}
     .mypage-and-chatting_wrap .heading span {color: #fff;}
     .mypage-and-chatting_wrap .nowPage {width: 449px; margin: 0px 0 0 -65px; text-indent: 0px;} 
@@ -387,3 +511,21 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
       .byebye {position: absolute; top: 50%; left: calc(50% - 466.795px); font-size: 87px; opacity: 0.3; color: #717181;}
       .mockup_outro {position: absolute; bottom: 0; left: calc(50% - 1065px);}
       
+
+    #outro .copy {position: absolute;
+      bottom: 0;
+      background: url("../images/bg_gradient2.png") no-repeat 0 0;
+      width: 1647px;
+      height: 709px;
+     }
+    #outro .copy p {
+      position: absolute;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      font-size: 20px;
+      color: #fff;
+      font-family: "SFUIText-Light";
+      text-align: center;
+     }
