@@ -89,7 +89,7 @@ header>h1 {float: left; padding-left: 122px;line-height: 220px; font-size: 32px;
     .desc .bold {font-family: "SFUIText-Bold";}
     /*다운로드 박스*/
     .download_area {}
-      .download_ios, .download_android {display: inline-block; margin-right: 20px; cursor: pointer;}
+      .download_ios, .download_android {display: inline-block; margin-right: 20px; cursor: pointer; z-index: 100;}
       .download_ios{background: url(../images/download_ios.png) no-repeat;
                     width: 208px; height: 75px;}
       .download_android{background: url(../images/download_android.png) no-repeat;

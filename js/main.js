@@ -2,6 +2,11 @@ $(document).ready(function () {
     $("header").addClass("upper");
     $("#home").addClass("on");
 
+    $("body a").click(function(e){
+        e.preventDefault();
+    });
+
+
     /*주메뉴 스크롤감지*/
     // Hide Header on on scroll down
     var didScroll;
@@ -39,6 +44,7 @@ $(document).ready(function () {
 
 
         $(window).scroll(function () {
+
             var scroll = $(this).scrollTop();
             console.log(scroll);
 
@@ -158,4 +164,28 @@ $(document).ready(function () {
       
 
         });
+
+        /*gnb*/
+            /*HOME*/
+
+            
+            $(".gnb a").eq(0).click(function(gnb1){
+                $("html,body").stop().animate({"scrollTop":0},1200,"swing");
+            });
+            /*ABOUT*/
+            $(".gnb a").eq(1).click(function(gnb1){
+                $("html,body").stop().animate({"scrollTop":900},1200,"swing");
+            });
+            /*Feature*/
+            $(".gnb a").eq(2).click(function(gnb1){
+                $("html,body").stop().animate({"scrollTop":1982},1200,"swing");
+            });
+            /*Details*/
+            $(".gnb a").eq(3).click(function(gnb1){
+                $("html,body").stop().animate({"scrollTop":5182},1200,"swing");
+            });
+            /*Outro*/
+            $(".gnb a").eq(4).click(function(gnb1){
+                $("html,body").stop().animate({"scrollTop":13584},1200,"swing");
+            });
 });
