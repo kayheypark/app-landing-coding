@@ -167,8 +167,6 @@ $(document).ready(function () {
 
         /*gnb*/
             /*HOME*/
-
-            
             $(".gnb a").eq(0).click(function(gnb1){
                 $("html,body").stop().animate({"scrollTop":0},1200,"swing");
             });
